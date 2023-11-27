@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stop-Start Button</title>
+    <link rel="stylesheet" href="to-do.css">
+</head>
+<body>
+    <div class="circle" onclick="toggleAnimation()">
+     <button>Start-stop</button>
+    </div>
+    <div class="timer-display">00:00:00</div>
+    <div class="todo-app">
+        <h4>todo-app</h4>
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Add your plan!">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <div>
+            <ul id="list-container">
+                <!-- Task items will be added here dynamically -->
+            </ul>
+       </div>
+    </div>
+   
+    <script src="to-do.js"></script>
+</body>
+</html>
