@@ -72,6 +72,26 @@ button{
     cursor: pointer;
     border-radius: 40px;
 }
+
+
+.task-container {
+  position: relative;
+  margin-bottom: 10px; 
+}
+
+
+
+.clear-button {
+  cursor: pointer;
+  font-weight: bold;
+  color: red;
+  position: absolute;
+  top: 0;
+  right: -30px; 
+}
+
+
+
 ul li{
     color: #edeef0;
     font-size: 17px;
@@ -80,9 +100,9 @@ ul li{
     user-select: none;
     cursor: pointer;
 }
-/* ... Your existing CSS styles ... */
 
-/* Add decorative element between checkbox and text */
+
+
 li {
     display: flex;
     align-items: center;

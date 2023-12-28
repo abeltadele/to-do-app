@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop-Start Button</title>
     <link rel="stylesheet" href="to-do.css">
 </head>
 <body>
     <div class="circle" onclick="toggleAnimation()">
-     <button>Start-stop</button>
+        <button>Start-stop</button>
     </div>
     <div class="timer-display">00:00:00</div>
     <div class="todo-app">
@@ -15,13 +18,24 @@
             <input type="text" id="input-box" placeholder="Add your plan!">
             <button onclick="addTask()">Add</button>
         </div>
-        <div>
-            <ul id="list-container">
-                <!-- Task items will be added here dynamically -->
-            </ul>
-       </div>
+        <div class="list-cont">
+        
+<ul id="list-container">
+  
+    <li>
+        <div class="task-container">
+            <label>
+           
+                <span class="clear-button"></span>
+            </label>
+        </div>
+    </li>
+</ul>
+
+
+        </div>
     </div>
-   
+
     <script src="to-do.js"></script>
 </body>
 </html>

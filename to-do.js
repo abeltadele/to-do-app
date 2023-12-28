@@ -48,123 +48,53 @@ function playAlarm() {
     const alarmSound = new Audio('alarm.mp3'); // Replace 'alarm.mp3' with the path to your alarm sound file
     alarmSound.play();
 }
-const inputBox = document.getElementById( 'input-box');
+
+const inputBox = document.getElementById('input-box');
 const listContainer = document.getElementById('list-container');
 
 function addTask() {
-    const inputBox = document.getElementById('input-box');
     const taskText = inputBox.value.trim();
-  
+
     if (taskText !== '') {
-      const listContainer = document.getElementById('list-container');
-      const listItem = document.createElement('li');
-  
-      const label = document.createElement('label');
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.className = 'checkbox';
-  
-      const taskTextSpan = document.createElement('span');
-      taskTextSpan.textContent = taskText;
-  
-      const clearButton = document.createElement('span');
-      clearButton.textContent = 'X';
-      clearButton.className = 'clear-button';
-      clearButton.addEventListener('click', function() {
-        listItem.remove(); // Clear the task when the cross is clicked
-      });
-  
-      label.appendChild(checkbox);
-      label.appendChild(taskTextSpan);
-      label.appendChild(clearButton);
-  
-      listItem.appendChild(label);
-      listContainer.appendChild(listItem);
-  
-      inputBox.value = ''; // Clear the input box after adding the task
+        const listItem = document.createElement('li');
+
+        const label = document.createElement('label');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'checkbox';
+
+        const taskTextSpan = document.createElement('span');
+        taskTextSpan.textContent = taskText;
+
+        const clearButton = document.createElement('span');
+        clearButton.textContent = 'X';
+        clearButton.className = 'clear-button';
+        clearButton.addEventListener('click', function() {
+            listItem.remove();
+            saveTasks(); // Save the tasks after removing a task
+        });
+
+        label.appendChild(checkbox);
+        label.appendChild(taskTextSpan);
+        label.appendChild(clearButton);
+
+        listItem.appendChild(label);
+        listContainer.appendChild(listItem);
+
+        inputBox.value = ''; // Clear the input box after adding the task
+        saveTasks(); // Save the tasks after adding a new task
+        initializeCheckboxes();
     }
-  }
-  
-  // Optional: Clear the input box when the user presses Enter key
-  document.getElementById('input-box').addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-      addTask();
-    }
-  });
-  // Function to load saved tasks from LocalStorage
-function loadSavedTasks() {
-  const savedTasks = localStorage.getItem('tasks');
-  if (savedTasks) {
-    const listContainer = document.getElementById('list-container');
-    listContainer.innerHTML = savedTasks;
-    initializeCheckboxes();
-  }
-}
-
-// Function to save the tasks to LocalStorage
-function saveTasks() {
-  const listContainer = document.getElementById('list-container');
-  localStorage.setItem('tasks', listContainer.innerHTML);
-}
-
-// Function to initialize checkbox functionality
-function initializeCheckboxes() {
-  const checkboxes = document.querySelectorAll('.checkbox');
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', saveTasks);
-  });
-}
-
-// Function to add a new task to the list
-function addTask() {
-  const inputBox = document.getElementById('input-box');
-  const taskText = inputBox.value.trim();
-
-  if (taskText !== '') {
-    const listContainer = document.getElementById('list-container');
-    const listItem = document.createElement('li');
-
-    const label = document.createElement('label');
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.className = 'checkbox';
-
-    const taskTextSpan = document.createElement('span');
-    taskTextSpan.textContent = taskText;
-
-    const clearButton = document.createElement('span');
-    clearButton.textContent = 'X';
-    clearButton.className = 'clear-button';
-    clearButton.addEventListener('click', function() {
-      listItem.remove();
-      saveTasks(); // Save the tasks after removing a task
-    });
-
-    label.appendChild(checkbox);
-    label.appendChild(taskTextSpan);
-    label.appendChild(clearButton);
-
-    listItem.appendChild(label);
-    listContainer.appendChild(listItem);
-
-    inputBox.value = ''; // Clear the input box after adding the task
-    saveTasks(); // Save the tasks after adding a new task
-    initializeCheckboxes();
-  }
 }
 
 // Optional: Clear the input box when the user presses Enter key
-document.getElementById('input-box').addEventListener('keyup', function(event) {
-  if (event.key === 'Enter') {
-    addTask();
-  }
+inputBox.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        addTask();
+    }
 });
 
 // Load saved tasks when the page is loaded
 window.addEventListener('load', function() {
-  loadSavedTasks();
+    loadSavedTasks();
 });
-
-  
-  
-  
