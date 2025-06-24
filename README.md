@@ -1,5 +1,5 @@
 ZenTask - To-Do & Journal Web App
-https://via.placeholder.com/800x500/6a11cb/ffffff?text=ZenTask+Screenshot (Replace with actual screenshot)
+
 
 Table of Contents
 About
