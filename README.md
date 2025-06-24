@@ -56,4 +56,4 @@ Daily inspirational quotes
 Demo
 Live Demo (Add your live demo link here)
 Installation
-Clone the repository:git clone https://github.com/yourusername/zentask.git
+Clone the repository:git clone https://github.com/abeltadele/to-do-app.git
