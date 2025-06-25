@@ -12,20 +12,53 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="logo">
-                <i class="fas fa-feather-alt"></i>
-                <h1>Abel<span>Task</span></h1>
-            </div>
-            <div class="controls">
-                <button class="theme-toggle" id="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button class="btn" id="new-journal-btn">
-                    <i class="fas fa-plus"></i> New Journal
-                </button>
-            </div>
-        </header>
+        <header class="main-header">
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <a href="#" class="logo-link">
+            <i class="fas fa-feather-alt logo-icon"></i>
+            <span class="logo-text">Abel<span>Task</span></span>
+        </a>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="primary-nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#todo-section" class="nav-link active" data-section="todo">
+                    <i class="fas fa-tasks nav-icon"></i>
+                    <span class="nav-text">Tasks</span>
+                    <span class="active-indicator"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#journal-section" class="nav-link" data-section="journal">
+                    <i class="fas fa-book nav-icon"></i>
+                    <span class="nav-text">Journal</span>
+                    <span class="active-indicator"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#stats-section" class="nav-link" data-section="stats">
+                    <i class="fas fa-chart-pie nav-icon"></i>
+                    <span class="nav-text">Insights</span>
+                    <span class="active-indicator"></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- User Controls -->
+    <div class="user-controls">
+        <button class="control-btn theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon theme-icon"></i>
+        </button>
+        <button class="control-btn notification-btn" aria-label="Notifications">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge">1</span>
+        </button>
+    </div>
+</header>
 
         <div class="app-container">
             <div class="panel">
